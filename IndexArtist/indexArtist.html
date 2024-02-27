@@ -12,20 +12,80 @@
 </head>
 
 <body>
-    <div class="row" style="height: 1000px;">
+    <div class="row bg-dark text-light" style="height: 1000px;">
         <!-- left bar -->
-        <div class="col-2 bg-primary bg-black" style="height: 100%;">
-
+        <div class="left-barside col-2 bg-black m-0 p-3 text-white fs-6">
+            <div class="btn-container">
+                <button class="my-2 d-block btn btn-link text-white text-decoration-none p-0">
+                    <i class="fa-solid fa-ellipsis"></i>
+                </button>
+                <button class="my-2 d-block btn btn-link text-white text-decoration-none p-0">
+                    <i class="fa-solid fa-house"></i>
+                    <span class="ms-2">Home</span>
+                </button>
+                <button class="my-2 d-block btn btn-link text-white text-decoration-none p-0">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <span class="ms-2">Search</span>
+                </button>
+                <button class="mb-4 d-block btn btn-link text-white text-decoration-none p-0">
+                    <i class="fa-solid fa-pause ms-1"></i>
+                    <span class="ms-2">La tua libreria</span>
+                </button>
+                <button class="my-2 d-block btn btn-link text-white text-decoration-none p-0">
+                    <i class="fa-solid fa-square-plus"></i>
+                    <span class="ms-2">Crea playlist</span>
+                </button>
+                <button class="my-2 d-block btn btn-link text-white text-decoration-none p-0">
+                    <i class="fa-solid fa-heart"></i>
+                    <span class="ms-2">Brani che ti piacciono</span>
+                </button>
+                <button class="mb-2 d-block btn btn-link text-white text-decoration-none p-0">
+                    <i class="fa-solid fa-bookmark"></i>
+                    <span class="ms-2">I tuoi episodi</span>
+                </button>
+                <hr class="my-4">
+            </div>
+            <div class="playlist-container">
+                <p>Le tue playlist:</p>
+                <button class="my-3 d-block btn btn-link text-white text-decoration-none p-0">
+                    <img src="/assets/Playlist-photos/1.jpg" alt="">
+                    <p class="d-inline-block">Life as a Teenager</p>
+                </button>
+                <button class="my-3 d-block btn btn-link text-white text-decoration-none p-0">
+                    <img src="/assets/Playlist-photos/2.jpg" alt="">
+                    <p class="d-inline-block">Positive Energy</p>
+                </button>
+                <button class="my-3 d-block btn btn-link text-white text-decoration-none p-0">
+                    <img src="/assets/Playlist-photos/3.jpg" alt="">
+                    <p class="d-inline-block">Through the Tunnel</p>
+                </button>
+                <button class="my-3 d-block btn btn-link text-white text-decoration-none p-0">
+                    <img src="/assets/Playlist-photos/4.jpg" alt="">
+                    <p class="d-inline-block">Drifting Away</p>
+                </button>
+                <button class="my-3 d-block btn btn-link text-white text-decoration-none p-0">
+                    <img src="/assets/Playlist-photos/5.jpg" alt="">
+                    <p class="d-inline-block">Lights Off</p>
+                </button>
+                <button class="my-3 d-block btn btn-link text-white text-decoration-none p-0">
+                    <img src="/assets/Playlist-photos/6.jpg" alt="">
+                    <p class="d-inline-block">First Choices</p>
+                </button>
+                <button class="my-3 d-block btn btn-link text-white text-decoration-none p-0">
+                    <img src="/assets/Playlist-photos/7.jpg" alt="">
+                    <p class="d-inline-block">Flow State</p>
+                </button>
+            </div>
         </div>
 
         <!-- page section -->
         <div class="col-8 p-0" style="height: 100%;">
             <!-- sezione top -->
-            <div id="top-section" class="pt-2 px-0 position-relative" style="height: 50%">
+            <section id="top-section" class="pt-2 px-0 position-relative" style="height: 50%">
                 <ul class="text-end">
                     <li class="dropdown">
-                        <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fa-solid fa-user bg-dark text-light p-2 rounded-pill"></i>
+                        <button class="btn dropdown-toggle text-light" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa-solid fa-user bg-dark p-2 rounded-pill"></i>
                             <span>User name</span>
                         </button>
                         <ul class="dropdown-menu dropdown-menu-dark">
@@ -38,7 +98,23 @@
                 <h1 id="artist-title" class="text-light position-absolute">
 
                 </h1>
-            </div>
+            </section>
+            <!-- barra -->
+            <section class="my-3 mx-4">
+                <i class="fa-solid fa-play p-3 rounded-pill me-3"></i>
+                <button type="button" class="me-3 px-4 bg-black text-light border border-white rounded"><strong>Follow</strong></button>
+                <i class="fa-solid fa-ellipsis"></i>
+            </section>
+            <!-- brani -->
+            <section class="row flex-column-reverse flex-md-row">
+                <div class="col-md-5 col-12 mx-4">
+                    <h4>Popolari</h4>
+                    
+                </div>
+                <div class="col-md-5 col-12">
+                    <h4>Brani che ti piacciono</h4>
+                </div>
+            </section>
         </div>
 
         <!-- right bar -->

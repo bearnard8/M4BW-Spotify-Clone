@@ -21,6 +21,10 @@ ul {
 .fa-ellipsis {
     color: #AAAAAA;
 }
+
+img {
+    cursor: pointer;
+}
 /* left side */
 .left-barside img{
     height: 50px;

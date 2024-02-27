@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <div class="row bg-dark text-light" style="height: 1000px;">
+    <div class="row bg-dark text-light" >
         <!-- left bar -->
         <div class="left-barside col-2 bg-black m-0 p-3 text-white fs-6">
             <div class="btn-container">
@@ -81,7 +81,7 @@
         <!-- page section -->
         <div class="col-8 p-0" style="height: 100%;">
             <!-- sezione top -->
-            <section id="top-section" class="pt-2 px-0 position-relative" style="height: 50%">
+            <section id="top-section" class="pt-2 px-0 position-relative" style="height: 70vh">
                 <ul class="text-end">
                     <li class="dropdown">
                         <button class="btn dropdown-toggle text-light" data-bs-toggle="dropdown" aria-expanded="false">
@@ -107,11 +107,15 @@
             </section>
             <!-- brani -->
             <section class="row flex-column-reverse flex-md-row">
-                <div class="col-md-5 col-12 mx-4">
+                <div class="col-md-7 col-12 mx-4">
                     <h4>Popolari</h4>
-                    
+                    <table class="table table-borderless table-dark">
+                        <tbody id="table-popular">
+                          
+                        </tbody>
+                      </table>
                 </div>
-                <div class="col-md-5 col-12">
+                <div class="col-md-4 col-12">
                     <h4>Brani che ti piacciono</h4>
                 </div>
             </section>

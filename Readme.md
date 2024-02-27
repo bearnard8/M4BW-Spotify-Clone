@@ -13,7 +13,7 @@ Palette:
 
 - #1ED45E: verde
 - #121212: grigio scuro
-- #1A1A1A: grigio chiaro (hover e buttons)
+- ##2D2D2D: grigio chiaro (hover e buttons)
 - #A7A7A7: grigio più chiaro (descrizioni e sottotitoli, info)
 - #000000: nero (sfondo)
 - #FAFAFA: bianco (scritte)

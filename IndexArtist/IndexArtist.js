@@ -1,4 +1,4 @@
-const endPoint = "https://striveschool-api.herokuapp.com/api/deezer/search?q=queen";
+const endPoint = "https://striveschool-api.herokuapp.com/api/deezer/search?q=imagin_dragons";
 // sezione top
 const topSection = document.getElementById("top-section");
 // nome artista
@@ -9,6 +9,7 @@ const nameArtist = document.getElementById("artist-title");
 
 
 window.onload = getResults();
+
 async function getResults () {
 
     const res = await fetch(endPoint);

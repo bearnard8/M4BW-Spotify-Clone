@@ -12,3 +12,20 @@ ul {
     bottom: 20%;
     left: 3%;
 }
+
+.fa-play {
+    background-color: #1BD661;
+    color: #030005;
+}
+
+.fa-ellipsis {
+    color: #AAAAAA;
+}
+/* left side */
+.left-barside img{
+    height: 50px;
+}
+
+.text-grey{
+color:#5b5b5b ;
+}

@@ -12,19 +12,7 @@ let num = 1;
 // counter per visualizza altro
 let maxNum = 6;
 
-btnOther.addEventListener("click", async () => {
-    if(maxNum === 6) {
-        maxNum = 11;
-        btnOther.innerText = "Riduci";
-        await getResults();
-        console.log(maxNum)
-    } else if (maxNum === 11) {
-        maxNum = 6;
-        await getResults();
-        btnOther.innerText = "Visualizza altro";
-        console.log(maxNum)
-    }
-})
+
 
 
 window.onload = getResults();
@@ -45,15 +33,30 @@ async function getResults () {
         listData.forEach(element => {
             if (num < maxNum ){
                 createPopular(element);
+                console.log(element)
             }
         });
-        // console.log(listData)
         
     } catch (error) {
         console.log(error);
     }
 
 }
+
+btnOther.addEventListener("click", async () => {
+    if(maxNum === 6) {
+        maxNum = 11;
+        btnOther.innerText = "Riduci";
+        await getResults();
+        // console.log(maxNum)
+    } else if (maxNum === 11) {
+        maxNum = 6;
+        tablePopular.innerHTML = "";
+        await getResults();
+        btnOther.innerText = "Visualizza altro";
+        // console.log(maxNum)
+    }
+})
 
 function getInfoTop ({picture_xl, name}) {
     topSection.style.backgroundImage = `url(${picture_xl})`
@@ -74,7 +77,7 @@ function createPopular (song) {
     } else {
         timingSong = `${minutes}:${remainingSeconds}`;
     }
-
+    // console.log(maxNum)
     let tr = document.createElement('tr');
     let th = document.createElement('td')
     let tdImg = document.createElement('td');

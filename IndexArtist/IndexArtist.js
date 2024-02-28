@@ -11,6 +11,9 @@ const btnOther = document.getElementById("other");
 let num = 1;
 // counter per visualizza altro
 let maxNum = 6;
+// input per ricerca
+const btnSearch = document.getElementById("search-btn");
+const inputSearch = document.getElementById("search-input");
 
 
 

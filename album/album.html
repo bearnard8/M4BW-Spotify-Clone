@@ -8,14 +8,82 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/29d9bcc801.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="album.css">
+    <link rel="stylesheet" href="/general.css">
     <title>Document</title>
 </head>
 
 <body>
     <div class="row" style="height: 1000px;">
         <!-- left bar -->
-        <div class="col-2 bg-primary bg-black" style="height: 100%;">
+        <div class="left-barside col-2 bg-black m-0 p-3 text-white fs-7 d-none d-lg-block">
+            <div class="btn-container">
+                <button class="my-2 d-flex align-items-center btn btn-link text-white text-decoration-none p-0">
+                    <i class="fa-solid fa-ellipsis"></i>
+                </button>
+                <button class="my-2 d-flex align-items-center btn btn-link text-white text-decoration-none p-0">
+                    <i class="fa-solid fa-house"></i>
+                    <span class="ms-2">Home</span>
+                </button>
+                <div class="d-flex align-items-center my-2">
+                    <button id="search-btn"
+                        class="d-flex align-items-center btn btn-link text-white text-decoration-none p-0"
+                        type="button">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                    <input id="search-input"
+                        class="text-white border-0 form-control form-control-sm h-50 ms-2 bg-black p-0" type="text"
+                        placeholder="Search ...">
+                </div>
+                <button class="mb-4 d-flex align-items-center btn btn-link text-white text-decoration-none p-0">
+                    <i class="fa-solid fa-pause ms-1"></i>
+                    <span class="ms-2">La tua libreria</span>
+                </button>
+                <button class="my-2 d-flex align-items-center btn btn-link text-white text-decoration-none p-0">
+                    <i class="fa-solid fa-square-plus"></i>
+                    <span class="ms-2">Crea playlist</span>
+                </button>
+                <button class="my-2 d-flex align-items-center btn btn-link text-white text-decoration-none p-0">
+                    <i class="fa-solid fa-heart"></i>
+                    <p class="ms-2">Brani che ti piacciono</p>
+                </button>
+                <button class="mb-2 d-flex align-items-center btn btn-link text-white text-decoration-none p-0">
+                    <i class="fa-solid fa-bookmark"></i>
+                    <span class="ms-2">I tuoi episodi</span>
+                </button>
+                <hr class="my-4">
+            </div>
 
+            <div class="playlist-container">
+                <p>Le tue playlist:</p>
+                <button class="my-3 d-flex align-items-center btn btn-link text-white text-decoration-none p-0">
+                    <img src="/assets/Playlist-photos/1.jpg" alt="">
+                    <p class="ms-2 fs-11">Life as a Teenager</p>
+                </button>
+                <button class="my-3 d-flex align-items-center btn btn-link text-white text-decoration-none p-0">
+                    <img src="/assets/Playlist-photos/2.jpg" alt="">
+                    <p class="ms-2 fs-11">Positive Energy</p>
+                </button>
+                <button class="my-3 d-flex align-items-center btn btn-link text-white text-decoration-none p-0">
+                    <img src="/assets/Playlist-photos/3.jpg" alt="">
+                    <p class="ms-2 fs-11">Through the Tunnel</p>
+                </button>
+                <button class="my-3 d-flex align-items-center btn btn-link text-white text-decoration-none p-0">
+                    <img src="/assets/Playlist-photos/4.jpg" alt="">
+                    <p class="ms-2 fs-11">Drifting Away</p>
+                </button>
+                <button class="my-3 d-flex align-items-center btn btn-link text-white text-decoration-none p-0">
+                    <img src="/assets/Playlist-photos/5.jpg" alt="">
+                    <p class="ms-2 fs-11">Lights Off</p>
+                </button>
+                <button class="my-3 d-flex align-items-center btn btn-link text-white text-decoration-none p-0">
+                    <img src="/assets/Playlist-photos/6.jpg" alt="">
+                    <p class="ms-2 fs-11">First Choices</p>
+                </button>
+                <button class="my-3 d-flex align-items-center btn btn-link text-white text-decoration-none p-0">
+                    <img src="/assets/Playlist-photos/7.jpg" alt="">
+                    <p class="ms-2 fs-11">Flow State</p>
+                </button>
+            </div>
         </div>
 
         <!-- page section -->
@@ -75,13 +143,113 @@
 
 
         <!-- right bar -->
-        <div class="col-2 bg-success" style="height: 100%;">
+        <div id="right-barside" class="col-2 bg-black m-0 p-3 text-white fs-6 d-none d-lg-block">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <p class="m-0">Attività amici</p>
+                <div class="d-flex justify-content-center">
+                    <button class="d-block btn btn-link text-grey text-decoration-none mx-2">
+                        <i class="fa-solid fa-user-plus"></i>
+                    </button>
+                    <button id="rightbar-close" class="d-block btn btn-link text-grey text-decoration-none p-0">
+                        <i class="fa-solid fa-x"></i>
+                    </button>
+                </div>
+            </div>
+
+
+            <div>
+                <div class="mb-4 d-flex justify-content-between align-items-center">
+                    <div class="d-flex justify-content-start align-items-center">
+                        <img class="user-photo me-2" src="/assets/users-photos/1.jpg" alt="user photo">
+                        <div class="user-info">
+                            <p>Charlie Hookham</p>
+                            <p> In camera &#xb7; Yumt Zouma</p>
+                            <p>
+                                <i class="fa-solid fa-music"></i>
+                                <span>EP III</span>
+                            </p>
+                        </div>
+                    </div>
+                    <p>4 Ore</p>
+                </div>
+
+                <div class="mb-4 d-flex justify-content-between align-items-center">
+                    <div class="d-flex justify-content-start align-items-center">
+                        <img class="user-photo me-2" src="/assets/users-photos/3.jpg" alt="user photo">
+                        <div class="user-info">
+                            <p>Lightdark02</p>
+                            <p>Aimed to Kill &#xb7; Jade LeMAc</p>
+                            <p>
+                                <i class="fa-solid fa-music"></i>
+                                <span>Aimed to Kill</span>
+                            </p>
+                        </div>
+                    </div>
+                    <p>3 giorni</p>
+                </div>
+
+                <div class="mb-4 d-flex justify-content-between align-items-center">
+                    <div class="d-flex justify-content-start align-items-center">
+                        <img class="user-photo me-2" src="/assets/users-photos/2.jpg" alt="user photo">
+                        <div class="user-info">
+                            <p>Valeria Traverso</p>
+                            <p>New Kings &#xb7; Sleeping Wolf</p>
+                            <p>
+                                <i class="fa-solid fa-music"></i>
+                                <span>Twint Badass mood</span>
+                            </p>
+                        </div>
+                    </div>
+                    <p>4 Ore</p>
+                </div>
+            </div>
         </div>
+
+        <!-- song-bar -->
+    <div id="song-bar">
+        <div class="text-white d-flex justify-content-between align-items-center h-100 px-3">
+            <div class="d-flex justify-content-start align-items-center">
+                <img src="/assets/Playlist-photos/1.jpg" alt="">
+                <div class="mx-3">
+                    <p>Fat Funny Friends</p>
+                    <p>Maddie Zahm</p>
+                </div>
+                <i class="fa-regular fa-heart"></i>
+            </div>
+
+
+            <div class="d-flex flex-column justify-content-center align-items-center">
+                <div class="d-flex justify-content-center align-items-center">
+                    <i class="fa-solid fa-shuffle mx-3"></i>
+                    <i class="fa-solid fa-backward-step mx-3"></i>
+                    <i class="fa-solid fa-circle-play mx-3 fs-2"></i>
+                    <i class="fa-solid fa-forward-step mx-3"></i>
+                    <i class="fa-solid fa-arrow-rotate-right mx-3"></i>
+                </div>
+                <div class="w-100">
+                    <input type="range" class="form-range w-100" id="customRange1">
+                </div>
+            </div>
+
+
+
+            <div class="text-grey d-flex justify-content-start align-items-center">
+                <i class="fa-solid fa-microphone mx-2"></i>
+                <i class="fa-solid fa-bars mx-2"></i>
+                <i class="fa-solid fa-desktop mx-2"></i>
+                <i class="fa-solid fa-volume-low mx-2"></i>
+                <input type="range" class="form-range mx-2" id="customRange1">
+                <i class="fa-solid fa-up-right-and-down-left-from-center mx-2"></i>
+            </div>
+        </div>
+    </div>
+
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
     <script src="album.js"></script>
+    <script src="/general.js"></script>
 
 </body>
 

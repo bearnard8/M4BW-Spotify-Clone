@@ -15,17 +15,18 @@
     <div class="row m-0">
 
         <!-- left bar -->
-        <div class="left-barside col-2 bg-black m-0 p-3 text-white fs-6">
+        <div class="left-barside col-2 bg-black m-0 p-3 text-white fs-7 d-none d-lg-block">
             <div class="btn-container">
-                <button class="my-2 d-block btn btn-link text-white text-decoration-none p-0">
+                <button class="my-2 d-flex align-items-center btn btn-link text-white text-decoration-none p-0">
                     <i class="fa-solid fa-ellipsis"></i>
                 </button>
-                <button class="my-2 d-block btn btn-link text-white text-decoration-none p-0">
+                <button class="my-2 d-flex align-items-center btn btn-link text-white text-decoration-none p-0">
                     <i class="fa-solid fa-house"></i>
                     <span class="ms-2">Home</span>
                 </button>
                 <div class="d-flex align-items-center my-2">
-                    <button id="search-btn" class="d-block btn btn-link text-white text-decoration-none p-0"
+                    <button id="search-btn"
+                        class="d-flex align-items-center btn btn-link text-white text-decoration-none p-0"
                         type="button">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </button>
@@ -33,63 +34,66 @@
                         class="text-white border-0 form-control form-control-sm h-50 ms-2 bg-black p-0" type="text"
                         placeholder="Search ...">
                 </div>
-                <button class="mb-4 d-block btn btn-link text-white text-decoration-none p-0">
+                <button class="mb-4 d-flex align-items-center btn btn-link text-white text-decoration-none p-0">
                     <i class="fa-solid fa-pause ms-1"></i>
                     <span class="ms-2">La tua libreria</span>
                 </button>
-                <button class="my-2 d-block btn btn-link text-white text-decoration-none p-0">
+                <button class="my-2 d-flex align-items-center btn btn-link text-white text-decoration-none p-0">
                     <i class="fa-solid fa-square-plus"></i>
                     <span class="ms-2">Crea playlist</span>
                 </button>
-                <button class="my-2 d-block btn btn-link text-white text-decoration-none p-0">
+                <button class="my-2 d-flex align-items-center btn btn-link text-white text-decoration-none p-0">
                     <i class="fa-solid fa-heart"></i>
-                    <span class="ms-2">Brani che ti piacciono</span>
+                    <p class="ms-2">Brani che ti piacciono</p>
                 </button>
-                <button class="mb-2 d-block btn btn-link text-white text-decoration-none p-0">
+                <button class="mb-2 d-flex align-items-center btn btn-link text-white text-decoration-none p-0">
                     <i class="fa-solid fa-bookmark"></i>
                     <span class="ms-2">I tuoi episodi</span>
                 </button>
                 <hr class="my-4">
             </div>
+
             <div class="playlist-container">
                 <p>Le tue playlist:</p>
-                <button class="my-3 d-block btn btn-link text-white text-decoration-none p-0">
+                <button class="my-3 d-flex align-items-center btn btn-link text-white text-decoration-none p-0">
                     <img src="/assets/Playlist-photos/1.jpg" alt="">
-                    <p class="d-inline-block">Life as a Teenager</p>
+                    <p class="ms-2 fs-11">Life as a Teenager</p>
                 </button>
-                <button class="my-3 d-block btn btn-link text-white text-decoration-none p-0">
+                <button class="my-3 d-flex align-items-center btn btn-link text-white text-decoration-none p-0">
                     <img src="/assets/Playlist-photos/2.jpg" alt="">
-                    <p class="d-inline-block">Positive Energy</p>
+                    <p class="ms-2 fs-11">Positive Energy</p>
                 </button>
-                <button class="my-3 d-block btn btn-link text-white text-decoration-none p-0">
+                <button class="my-3 d-flex align-items-center btn btn-link text-white text-decoration-none p-0">
                     <img src="/assets/Playlist-photos/3.jpg" alt="">
-                    <p class="d-inline-block">Through the Tunnel</p>
+                    <p class="ms-2 fs-11">Through the Tunnel</p>
                 </button>
-                <button class="my-3 d-block btn btn-link text-white text-decoration-none p-0">
+                <button class="my-3 d-flex align-items-center btn btn-link text-white text-decoration-none p-0">
                     <img src="/assets/Playlist-photos/4.jpg" alt="">
-                    <p class="d-inline-block">Drifting Away</p>
+                    <p class="ms-2 fs-11">Drifting Away</p>
                 </button>
-                <button class="my-3 d-block btn btn-link text-white text-decoration-none p-0">
+                <button class="my-3 d-flex align-items-center btn btn-link text-white text-decoration-none p-0">
                     <img src="/assets/Playlist-photos/5.jpg" alt="">
-                    <p class="d-inline-block">Lights Off</p>
+                    <p class="ms-2 fs-11">Lights Off</p>
                 </button>
-                <button class="my-3 d-block btn btn-link text-white text-decoration-none p-0">
+                <button class="my-3 d-flex align-items-center btn btn-link text-white text-decoration-none p-0">
                     <img src="/assets/Playlist-photos/6.jpg" alt="">
-                    <p class="d-inline-block">First Choices</p>
+                    <p class="ms-2 fs-11">First Choices</p>
                 </button>
-                <button class="my-3 d-block btn btn-link text-white text-decoration-none p-0">
+                <button class="my-3 d-flex align-items-center btn btn-link text-white text-decoration-none p-0">
                     <img src="/assets/Playlist-photos/7.jpg" alt="">
-                    <p class="d-inline-block">Flow State</p>
+                    <p class="ms-2 fs-11">Flow State</p>
                 </button>
             </div>
         </div>
 
         <!-- page section -->
-        <div id="page-section" class="col-8 bg-secondary m-0"></div>
+        <div id="page-section" class="col-lg-8 bg-secondary m-0 col-12">
+
+        </div>
 
 
         <!-- right bar -->
-        <div id="right-barside" class="col-2 bg-black m-0 p-3 text-white fs-6">
+        <div id="right-barside" class="col-2 bg-black m-0 p-3 text-white fs-6 d-none d-lg-block">
             <div class="d-flex justify-content-between align-items-center mb-4">
                 <p class="m-0">Attività amici</p>
                 <div class="d-flex justify-content-center">
@@ -152,21 +156,31 @@
         </div>
     </div>
 
-
-
-
     <!-- song-bar -->
     <div id="song-bar">
         <div class="text-white d-flex justify-content-between align-items-center h-100 px-3">
             <div class="d-flex justify-content-start align-items-center">
                 <img src="/assets/Playlist-photos/1.jpg" alt="">
-                <div  class="mx-3" >
+                <div class="mx-3">
                     <p>Fat Funny Friends</p>
                     <p>Maddie Zahm</p>
                 </div>
                 <i class="fa-regular fa-heart"></i>
             </div>
-            <div></div>
+
+
+            <div class="d-flex flex-column justify-content-center align-items-center">
+                <div class="d-flex justify-content-center align-items-center">
+                    <i class="fa-solid fa-shuffle mx-3"></i>
+                    <i class="fa-solid fa-backward-step mx-3"></i>
+                    <i class="fa-solid fa-circle-play mx-3 fs-2"></i>
+                    <i class="fa-solid fa-forward-step mx-3"></i>
+                    <i class="fa-solid fa-arrow-rotate-right mx-3"></i>
+                </div>
+                <div class="w-100">
+                    <input type="range" class="form-range w-100" id="customRange1">
+                </div>
+            </div>
 
 
 

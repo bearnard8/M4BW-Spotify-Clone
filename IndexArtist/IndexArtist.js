@@ -18,29 +18,29 @@ let maxNum = 6;
 window.onload = getResults();
 
 async function getResults () {
-
+    tablePopular.innerHTML = "";
     try {
         const res = await fetch(endPoint);
         const json = await res.json();
         const data = json.data;
-        getInfoTop(data[0].artist)
+        getInfoTop(data[0].artist);
 
         const song = await fetch(data[0].artist.tracklist)
         const list = await song.json();
         const listData = list.data;
         listData.sort((a, b) => b.rank - a.rank);
-        
+        console.log(listData)
         listData.forEach(element => {
             if (num < maxNum ){
                 createPopular(element);
-                console.log(element)
+                console.log(num);
             }
         });
         
     } catch (error) {
         console.log(error);
     }
-
+    num =1;
 }
 
 btnOther.addEventListener("click", async () => {
@@ -48,13 +48,13 @@ btnOther.addEventListener("click", async () => {
         maxNum = 11;
         btnOther.innerText = "Riduci";
         await getResults();
-        // console.log(maxNum)
+        console.log(maxNum)
     } else if (maxNum === 11) {
         maxNum = 6;
-        tablePopular.innerHTML = "";
+        
         await getResults();
         btnOther.innerText = "Visualizza altro";
-        // console.log(maxNum)
+        console.log(maxNum)
     }
 })
 

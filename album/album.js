@@ -26,13 +26,13 @@ getData();
 function createAlbumPage({title, cover_medium, artist, tracks, duration }){
 
     let containerImg = document.createElement("div");
-    containerImg.classList.add("col-md-4");
+    containerImg.classList.add("col-md-3");
 
     let imgAlbum = document.createElement("img");
     imgAlbum.src = cover_medium;
 
     let containerText = document.createElement("div");
-    containerText.classList.add("col-md-8", "text-white");
+    containerText.classList.add("col-md-9", "text-white");
 
     let albumTx = document.createElement("p");
     albumTx.innerText = "ALBUM";

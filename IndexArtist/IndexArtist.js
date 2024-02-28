@@ -5,10 +5,26 @@ const topSection = document.getElementById("top-section");
 const nameArtist = document.getElementById("artist-title");
 // tabella popular
 const tablePopular = document.getElementById("table-popular");
+// btn other
+const btnOther = document.getElementById("other");
 // counter per numero canzoni
 let num = 1;
+// counter per visualizza altro
+let maxNum = 6;
 
-
+btnOther.addEventListener("click", async () => {
+    if(maxNum === 6) {
+        maxNum = 11;
+        btnOther.innerText = "Riduci";
+        await getResults();
+        console.log(maxNum)
+    } else if (maxNum === 11) {
+        maxNum = 6;
+        await getResults();
+        btnOther.innerText = "Visualizza altro";
+        console.log(maxNum)
+    }
+})
 
 
 window.onload = getResults();
@@ -27,11 +43,11 @@ async function getResults () {
         listData.sort((a, b) => b.rank - a.rank);
         
         listData.forEach(element => {
-            if (num < 6 ){
+            if (num < maxNum ){
                 createPopular(element);
             }
         });
-        console.log(listData)
+        // console.log(listData)
         
     } catch (error) {
         console.log(error);
@@ -81,7 +97,7 @@ function createPopular (song) {
     name.innerText = song.title;
     rank.innerText = song.rank;
     duration.innerText = timingSong;
-    console.log(num)
+    // console.log(num)
     // creazione elemento
     tdImg.appendChild(img)
     tr.appendChild(th);

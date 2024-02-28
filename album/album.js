@@ -32,7 +32,7 @@ function createAlbumPage({title, cover_medium, artist, tracks, duration }){
     imgAlbum.src = cover_medium;
 
     let containerText = document.createElement("div");
-    containerText.classList.add("col-md-8");
+    containerText.classList.add("col-md-8", "text-white");
 
     let albumTx = document.createElement("p");
     albumTx.innerText = "ALBUM";
@@ -65,7 +65,19 @@ function createAlbumPage({title, cover_medium, artist, tracks, duration }){
     const hours = Math.floor(duration / 3600);
     const minutes = Math.floor((duration % 3600) / 60);
     const remainingSeconds = duration % 60;
-    let timingSong = `${hours} ore ${minutes} minuti ${remainingSeconds} secondi`;
+    let timingSong;
+
+    if (hours === 0) {
+        timingSong = `${minutes} minuti ${remainingSeconds} secondi`;
+    } else if (hours === 1){
+        timingSong = `${hours} ora ${minutes} minuti ${remainingSeconds} secondi`;
+    } else if (remainingSeconds < 10){
+        timingSong = `${hours} ore ${minutes} minuti 0${remainingSeconds} secondi`;
+    } else {
+        timingSong = `${hours} ore ${minutes} minuti ${remainingSeconds} secondi`;
+    }
+
+
     albumTiming.innerText = timingSong;
     
 
@@ -86,33 +98,40 @@ function createAlbumPage({title, cover_medium, artist, tracks, duration }){
 
     songArray.forEach(element => {
         songListDisplay(element);
-        // console.log(element);
+        console.log(element);
     });
 
 }
 
 let count = 1;
 
-function songListDisplay ({title, rank, duration}){
+function songListDisplay ({title, artist, rank, duration}){
 
     let tableRow = document.createElement("tr");
-    tableRow.classList.add("row");
+    tableRow.classList.add("row", "text-white", "fw-lighter", "py-1");
 
     let songNumb = document.createElement("th");
-    songNumb.classList.add("col-md-1");
+    songNumb.classList.add("col-md-1", "text-end", "px-0");
     songNumb.innerText = count ++;
  
     
-    let songTitle = document.createElement("td");
+    let songTitleArtista = document.createElement("td");
+    songTitleArtista.classList.add("col-md-6", "px-3");
+
+    let songTitle = document.createElement("p");
     songTitle.innerText = title;
-    songTitle.classList.add("col-md-6");
+    songTitle.classList.add("fw-bold");
+
+    let songArtista = document.createElement("p");
+    songArtista.innerText = artist.name;
+
 
     let playedSong = document.createElement("td");
     playedSong.innerText = rank;
-    playedSong.classList.add("col-md-4");
+    playedSong.classList.add("col-md-4", "text-center", "px-3");
 
     let songTime = document.createElement("td");
-    songTime.classList.add("col-md-1");
+    songTime.classList.add("col-md-1", "px-0");
     const minutes = Math.floor((duration % 3600) / 60);
     const remainingSeconds = duration % 60;
     let timingSong;
@@ -123,9 +142,10 @@ function songListDisplay ({title, rank, duration}){
     }
     songTime.innerText = timingSong;
     
-
+    songTitleArtista.appendChild(songTitle);
+    songTitleArtista.appendChild(songArtista);
     tableRow.appendChild(songNumb);
-    tableRow.appendChild(songTitle);
+    tableRow.appendChild(songTitleArtista);
     tableRow.appendChild(playedSong);
     tableRow.appendChild(songTime);
     containerSong.appendChild(tableRow);

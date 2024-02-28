@@ -19,26 +19,56 @@
         </div>
 
         <!-- page section -->
-        <div class="col-8 bg-secondary" style="height: 100%;">
-            <div class="row" id="top-section">
+        <div class="col-8 bg-black p-0" style="height: 100%;">
+            <div id="back-gradient">
+                <div class="row" id="top-section">
 
-            </div>
+                </div>
 
-            <div id="song-list">
-                <table class="table table-dark">
-                    <thead>
-                      <tr>
-                        <th scope="col" class="col-md-1">#</th>
-                        <th scope="col" class="col-md-6">TITOLO</th>
-                        <th scope="col" class="col-md-4">RIPRODUZIONI</th>
-                        <th scope="col" class="col-md-1"><i class="fa-regular fa-clock"></i></th>
-                      </tr>
-                    </thead>
-                    <tbody id="song-area">
+                <div id="icone-container">
+                    <i class="fa-solid fa-play"></i>
+                    <!-- <i class="fa-solid fa-circle-play"></i> -->
+                    <i class="fa-regular fa-heart"></i>
+                    <!-- <i class="fa-solid fa-heart"></i> -->
+                    <i class="fa-solid fa-arrow-down"></i>
 
-                    </tbody>
-                </table>
+                    <div class="dropdown">
+                        <a class="btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa-solid fa-ellipsis"></i>
+                        </a>
+                      
+                        <ul class="dropdown-menu bg-black">
+                          <li><a class="dropdown-item text-white" href="#">Add to your library</a></li>
+                          <li><a class="dropdown-item text-white" href="#">Add to queue</a></li>
+                          <li><a class="dropdown-item text-white" href="#">Report</a></li>
+                          <li><a class="dropdown-item text-white" href="#">Download</a></li>
+                          <li><a class="dropdown-item text-white" href="#">Exclude from your taste profile</a></li>
+                          <li><a class="dropdown-item text-white" href="#">Add to folder</a></li>
+                          <li><a class="dropdown-item text-white" href="#">Add to other playlist</a></li>
+                          <hr class="text-white">
+                          <li><a class="dropdown-item text-white" href="#">Share</a></li>
+                          <hr class="text-white">
+                          <li><a class="dropdown-item text-white" href="#">About reccomendation</a></li>
+                        </ul>
+                      </div>
+                </div>
 
+                <div id="song-list" class="container-fluid">
+                    <table class="table" id="table-title">
+                        <thead>
+                            <tr>
+                                <th scope="col" class="col-md-1 text-white text-end">#</th>
+                                <th scope="col" class="col-md-6 text-white">TITOLO</th>
+                                <th scope="col" class="col-md-4 text-white text-center">RIPRODUZIONI</th>
+                                <th scope="col" class="col-md-1 text-white"><i class="fa-regular fa-clock"></i></th>
+                            </tr>
+                        </thead>
+                        <tbody id="song-area">
+
+                        </tbody>
+                    </table>
+
+                </div>
             </div>
         
         </div>

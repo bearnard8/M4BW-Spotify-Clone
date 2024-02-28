@@ -39,16 +39,17 @@ function createAlbumPage({title, cover_medium, artist, tracks, duration }){
 
     let albumTitle = document.createElement("p");
     albumTitle.innerText = title;
-    albumTitle.classList.add();
+    albumTitle.classList.add("fw-bold");
 
     let boxArtist = document.createElement("div");
     boxArtist.classList.add("d-flex", "px-2");
 
     let artistName = document.createElement("p");
     artistName.innerText = artist.name + " •";
+    artistName.classList.add("fw-bold");
 
     let boxTrackNumb = document.createElement("div");
-    boxTrackNumb.classList.add("d-flex", "px-2");
+    boxTrackNumb.classList.add("d-flex", "px-2", "gap-2", "fw-bold");
 
     let totalTracks = document.createElement("p");
     let countTrack = tracks.data;
@@ -79,6 +80,7 @@ function createAlbumPage({title, cover_medium, artist, tracks, duration }){
 
 
     albumTiming.innerText = timingSong;
+    albumTiming.classList.add("fw-lighter");
     
 
     containerImg.appendChild(imgAlbum);

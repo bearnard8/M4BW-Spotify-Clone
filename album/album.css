@@ -48,7 +48,7 @@
     display: flex;
     align-items: center;
     gap: 20px;
-    padding-left: 50px;
+    padding-left: 35px;
  }
 
  #icone-container > i:first-child{
@@ -100,7 +100,7 @@
 
  #table-title{
      --bs-table-bg: none;
-     --bs-border-color: transparent;
+     --bs-border-color: rgba(168, 165, 165, 0.598);
 
  }
 

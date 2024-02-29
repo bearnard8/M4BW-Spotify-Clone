@@ -2,10 +2,16 @@
 const endPoint = "https://striveschool-api.herokuapp.com/api/deezer/search?q=";
 
 // Variabile artista degli album di benvenuto
-const welcomeArtist = "Coldplay";
+const welcomeArtist = "a";
 
 // Container card album suggeriti
 const cardContainer = document.getElementById("suggestions-container");
+
+// Input di ricerca
+const inputField = document.getElementById("search-input");
+
+// Contenitore del contenuto centrale
+const midBox = document.getElementById("central-content");
 
 // close the right bar-side:
 document.getElementById("rightbar-close").addEventListener("click",()=> {
@@ -14,8 +20,10 @@ document.getElementById("rightbar-close").addEventListener("click",()=> {
     document.getElementById("page-section").classList.add("col-lg-10");
 });
 
-const albums = [];
-const rndAlbums = [];
+let albums = [];
+let artists = [];
+let songs = [];
+let rndAlbums = [];
 
 window.onload = getResults();
 
@@ -93,7 +101,123 @@ function createAlbumCard({title, cover_xl}) {
             cardBody.appendChild(albumCover);
             cardBody.appendChild(cardText);
                 cardText.appendChild(albumTitle);
+}
 
+/*
+Funzione di ricerca
+- findResults prende il contenuto dell'input e fa una fetch su quel contenuto FATTO
+- cicliamo i dati ricevuti e creiamo tre array con i risultati (privi di duplicati) di album, artisti e canzoni
+- su questi array chiamiamo la funzione per creare le card, in modo che rimandino alle relative pagine
+*/
 
+async function findResults() {
+    albums = [];
+    artists = [];
+    songs = [];
+    midBox.innerHTML = "";
+    const searchValue = inputField.value;
+    try {
+        const res = await fetch(`${endPoint}${searchValue}`);
+        const json = await res.json();
+        const data = json.data;
+        data.forEach(record => {
+            getData(record);
+        })
+        createSearchResults();
+    } catch (err) {
+        console.log(err)
+    }
+}
+
+function getData (record) {
+    if(!isObjectInArray(albums, record.album)) {
+        albums.push(record.album);
+    }
+    if(!isObjectInArray(artists, record.artist)) {
+        artists.push(record.artist);
+    }
+    if(!isObjectInArray(songs, record)) {
+        songs.push(record);
+    }
+}
+
+function createSearchResults () {
+
+    if (albums.length > 0) {
+        
+        let albumSectionContainer = document.createElement("div");
+        let albumSectionTitle = document.createElement("h3");
+            albumSectionTitle.classList.add("text-light");
+            albumSectionTitle.innerText = "Albums";
+        let albumCardsContainer = document.createElement("div");
+            albumCardsContainer.classList.add("container-fluid", "p-0");
+        let albumCardsRow = document.createElement("div");
+            albumCardsRow.classList.add("row", "g-1", "d-flex", "p-0", "justify-content-start");
+
+        midBox.appendChild(albumSectionContainer);
+            albumSectionContainer.appendChild(albumSectionTitle);
+            albumSectionContainer.appendChild(albumCardsContainer);
+                albumCardsContainer.appendChild(albumCardsRow);
+
+        albums.forEach(album => {
+            let cardAnchor = document.createElement("a");
+                cardAnchor.href = `/album/album.html?albid=${album.id}`;
+                cardAnchor.classList.add("col-md-2");
+            let cardBody = document.createElement("div");
+                cardBody.classList.add("card", "text-bg-dark");
+            let albumCover = document.createElement("img");
+                albumCover.classList.add("card-img-top", "p-3");
+                albumCover.src = album.cover_xl;
+            let cardText = document.createElement("div");
+                cardText.classList.add("card-body", "playlist-info");
+            let albumTitle = document.createElement("p");
+                albumTitle.classList.add("card-text", "playlist-desc");
+                albumTitle.innerText = album.title;
+
+            albumCardsRow.appendChild(cardAnchor);
+                cardAnchor.appendChild(cardBody);
+                        cardBody.appendChild(albumCover);
+                        cardBody.appendChild(cardText);
+                            cardText.appendChild(albumTitle);
+        });
+    }
+
+    if (artists.length > 0) {
+        
+        let artistSectionContainer = document.createElement("div");
+        let artistSectionTitle = document.createElement("h3");
+            artistSectionTitle.classList.add("text-light");
+            artistSectionTitle.innerText = "Artists";
+        let artistCardsContainer = document.createElement("div");
+            artistCardsContainer.classList.add("container-fluid", "p-0");
+        let artistCardsRow = document.createElement("div");
+            artistCardsRow.classList.add("row", "g-1", "d-flex", "p-0", "justify-content-start");
+
+        midBox.appendChild(artistSectionContainer);
+            artistSectionContainer.appendChild(artistSectionTitle);
+            artistSectionContainer.appendChild(artistCardsContainer);
+                artistCardsContainer.appendChild(artistCardsRow);
+
+        artists.forEach(artist => {
+            let cardBox = document.createElement("div");
+                cardBox.classList.add("col-md-2");
+            let cardBody = document.createElement("div");
+                cardBody.classList.add("card", "text-bg-dark", "h-100");
+            let artistPic = document.createElement("img");
+                artistPic.classList.add("card-img-top", "p-3");
+                artistPic.src = artist.picture_xl;
+            let cardText = document.createElement("div");
+                cardText.classList.add("card-body", "playlist-info");
+            let artistName = document.createElement("p");
+                artistName.classList.add("card-text", "playlist-desc");
+                artistName.innerText = artist.name;
+
+            artistCardsRow.appendChild(cardBox);
+                cardBox.appendChild(cardBody);
+                    cardBody.appendChild(artistPic);
+                    cardBody.appendChild(cardText);
+                        cardText.appendChild(artistName);
+        });
+    }
 
 }

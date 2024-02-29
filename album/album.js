@@ -3,12 +3,17 @@ const containerTopAlbum = document.getElementById("top-section");
 
 const containerSong = document.getElementById("song-list");
 
-const albumEndpoint = "https://striveschool-api.herokuapp.com/api/deezer/album/1121401";
+const backgroundColor = document.getElementById("back-gradient");
+
+const albumEndpoint = "https://striveschool-api.herokuapp.com/api/deezer/album/";
+
+const paramAlbum = new URLSearchParams(window.location.search);
+const idAlbum = paramAlbum.get("id");
 
 
 async function getData(){
     try {
-        const result = await fetch(albumEndpoint)
+        const result = await fetch(albumEndpoint+idAlbum)
         const json = await result.json();
         // console.log(json);
         createAlbumPage(json);
@@ -21,9 +26,12 @@ async function getData(){
 getData();
 
 
-
+// FUNZIONE PER CREARE LA TESTA
 
 function createAlbumPage({title, cover_medium, artist, tracks, duration }){
+
+    containerTopAlbum.innerHTML="";
+    containerSong.innerHTML = "";
 
     let containerImg = document.createElement("div");
     containerImg.classList.add("col-md-3");
@@ -105,6 +113,7 @@ function createAlbumPage({title, cover_medium, artist, tracks, duration }){
 
 }
 
+// FUNZIONE PER CREARE LA LISTA DELLE FUNZIONI
 let count = 1;
 
 function songListDisplay ({title, artist, rank, duration}){
@@ -153,6 +162,15 @@ function songListDisplay ({title, artist, rank, duration}){
     containerSong.appendChild(tableRow);
  
 }
+
+
+// FUNZIONE PER CREARE IL COLORE DI SFONDO RANDOM
+
+let colorBack = ["blu", "rosso", "verde", "viola", "giallo", "lightblu", "rosa"];
+let colorMix = colorBack[Math.floor(Math.random() * colorBack.length)];
+
+backgroundColor.classList.add(colorMix);
+console.log(colorMix);
 
 
 

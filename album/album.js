@@ -8,7 +8,7 @@ const backgroundColor = document.getElementById("back-gradient");
 const albumEndpoint = "https://striveschool-api.herokuapp.com/api/deezer/album/";
 
 const paramAlbum = new URLSearchParams(window.location.search);
-const idAlbum = paramAlbum.get("id");
+const idAlbum = paramAlbum.get("albid");
 
 
 async function getData(){

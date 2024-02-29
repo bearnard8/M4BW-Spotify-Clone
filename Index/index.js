@@ -199,8 +199,9 @@ function createSearchResults () {
                 artistCardsContainer.appendChild(artistCardsRow);
 
         artists.forEach(artist => {
-            let cardBox = document.createElement("div");
-                cardBox.classList.add("col-md-2");
+            let cardAnchor = document.createElement("a");
+                cardAnchor.classList.add("col-md-2");
+                cardAnchor.href = `/album/album.html?albid=${artist.id}`;
             let cardBody = document.createElement("div");
                 cardBody.classList.add("card", "text-bg-dark", "h-100");
             let artistPic = document.createElement("img");
@@ -212,8 +213,8 @@ function createSearchResults () {
                 artistName.classList.add("card-text", "playlist-desc");
                 artistName.innerText = artist.name;
 
-            artistCardsRow.appendChild(cardBox);
-                cardBox.appendChild(cardBody);
+            artistCardsRow.appendChild(cardAnchor);
+                cardAnchor.appendChild(cardBody);
                     cardBody.appendChild(artistPic);
                     cardBody.appendChild(cardText);
                         cardText.appendChild(artistName);

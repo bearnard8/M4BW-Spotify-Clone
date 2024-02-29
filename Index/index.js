@@ -161,9 +161,8 @@ function createSearchResults () {
 
         albums.forEach(album => {
             let cardAnchor = document.createElement("a");
-                cardAnchor.href = `${endPoint}${album.id}`;
-            let cardBox = document.createElement("div");
-                cardBox.classList.add("col-md-2");
+                cardAnchor.href = `/album/album.html?albid=${album.id}`;
+                cardAnchor.classList.add("col-md-2");
             let cardBody = document.createElement("div");
                 cardBody.classList.add("card", "text-bg-dark");
             let albumCover = document.createElement("img");
@@ -175,11 +174,11 @@ function createSearchResults () {
                 albumTitle.classList.add("card-text", "playlist-desc");
                 albumTitle.innerText = album.title;
 
-            albumCardsRow.appendChild(cardBox);
-                cardBox.appendChild(cardBody);
-                    cardBody.appendChild(albumCover);
-                    cardBody.appendChild(cardText);
-                        cardText.appendChild(albumTitle);
+            albumCardsRow.appendChild(cardAnchor);
+                cardAnchor.appendChild(cardBody);
+                        cardBody.appendChild(albumCover);
+                        cardBody.appendChild(cardText);
+                            cardText.appendChild(albumTitle);
         });
     }
 

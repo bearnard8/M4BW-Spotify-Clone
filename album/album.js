@@ -5,12 +5,15 @@ const containerSong = document.getElementById("song-list");
 
 const backgroundColor = document.getElementById("back-gradient");
 
-const albumEndpoint = "https://striveschool-api.herokuapp.com/api/deezer/album/1121401";
+const albumEndpoint = "https://striveschool-api.herokuapp.com/api/deezer/album/";
+
+const paramAlbum = new URLSearchParams(window.location.search);
+const idAlbum = paramAlbum.get("id");
 
 
 async function getData(){
     try {
-        const result = await fetch(albumEndpoint)
+        const result = await fetch(albumEndpoint+idAlbum)
         const json = await result.json();
         // console.log(json);
         createAlbumPage(json);

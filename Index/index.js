@@ -201,7 +201,7 @@ function createSearchResults () {
         artists.forEach(artist => {
             let cardAnchor = document.createElement("a");
                 cardAnchor.classList.add("col-md-2");
-                cardAnchor.href = `/album/album.html?albid=${artist.id}`;
+                cardAnchor.href = `/IndexArtist/indexArtist.html?artid=${artist.id}`;
             let cardBody = document.createElement("div");
                 cardBody.classList.add("card", "text-bg-dark", "h-100");
             let artistPic = document.createElement("img");

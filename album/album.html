@@ -6,14 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <script src="https://kit.fontawesome.com/209b0f50b4.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="general.css">
+    <script src="https://kit.fontawesome.com/29d9bcc801.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="album.css">
+    <link rel="stylesheet" href="/general.css">
     <title>Document</title>
 </head>
 
 <body>
-    <div class="row m-0">
-
+    <div class="row" style="height: 1000px;">
         <!-- left bar -->
         <div class="left-barside col-2 bg-black m-0 p-3 text-white fs-7 d-none d-lg-block">
             <div class="btn-container">
@@ -87,8 +87,60 @@
         </div>
 
         <!-- page section -->
-        <div id="page-section" class="col-lg-8 bg-secondary m-0 col-12">
+        <div class="col-8 bg-black p-0" style="height: 100%;">
+            <div id="back-gradient">
+                <div class="row" id="top-section">
 
+                </div>
+
+                
+
+                <div id="song-list" class="container-fluid">
+                    <div id="icone-container">
+                        <i class="fa-solid fa-play"></i>
+                        <!-- <i class="fa-solid fa-circle-play"></i> -->
+                        <i class="fa-regular fa-heart"></i>
+                        <!-- <i class="fa-solid fa-heart"></i> -->
+                        <i class="fa-solid fa-arrow-down"></i>
+    
+                        <div class="dropdown">
+                            <a class="btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fa-solid fa-ellipsis"></i>
+                            </a>
+                          
+                            <ul class="dropdown-menu bg-black">
+                              <li><a class="dropdown-item text-white" href="#">Add to your library</a></li>
+                              <li><a class="dropdown-item text-white" href="#">Add to queue</a></li>
+                              <li><a class="dropdown-item text-white" href="#">Report</a></li>
+                              <li><a class="dropdown-item text-white" href="#">Download</a></li>
+                              <li><a class="dropdown-item text-white" href="#">Exclude from your taste profile</a></li>
+                              <li><a class="dropdown-item text-white" href="#">Add to folder</a></li>
+                              <li><a class="dropdown-item text-white" href="#">Add to other playlist</a></li>
+                              <hr class="text-white">
+                              <li><a class="dropdown-item text-white" href="#">Share</a></li>
+                              <hr class="text-white">
+                              <li><a class="dropdown-item text-white" href="#">About reccomendation</a></li>
+                            </ul>
+                          </div>
+                    </div>
+
+                    <table class="table" id="table-title">
+                        <thead>
+                            <tr>
+                                <th scope="col" class="col-md-1 text-white text-end fw-lighter">#</th>
+                                <th scope="col" class="col-md-6 text-white fw-lighter">TITOLO</th>
+                                <th scope="col" class="col-md-4 text-white text-center fw-lighter">RIPRODUZIONI</th>
+                                <th scope="col" class="col-md-1 text-white"><i class="fa-regular fa-clock fw-lighter"></i></th>
+                            </tr>
+                        </thead>
+                        <tbody id="song-area">
+
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        
         </div>
 
 
@@ -154,9 +206,8 @@
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- song-bar -->
+        <!-- song-bar -->
     <div id="song-bar">
         <div class="text-white d-flex justify-content-between align-items-center h-100 px-3">
             <div class="d-flex justify-content-start align-items-center">
@@ -194,10 +245,14 @@
             </div>
         </div>
     </div>
-</body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
-<script src="general.js"></script>
+    <script src="album.js"></script>
+    <script src="/general.js"></script>
+
+</body>
 
 </html>

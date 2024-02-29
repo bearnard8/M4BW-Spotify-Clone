@@ -11,6 +11,40 @@ const btnOther = document.getElementById("other");
 let num = 1;
 // counter per visualizza altro
 let maxNum = 6;
+// input per ricerca
+const btnSearch = document.getElementById("search-btn");
+const inputSearch = document.getElementById("search-input");
+
+
+
+
+window.onload = getResults();
+
+async function getResults () {
+    tablePopular.innerHTML = "";
+    try {
+        const res = await fetch(endPoint);
+        const json = await res.json();
+        const data = json.data;
+        getInfoTop(data[0].artist);
+
+        const song = await fetch(data[0].artist.tracklist)
+        const list = await song.json();
+        const listData = list.data;
+        listData.sort((a, b) => b.rank - a.rank);
+        console.log(listData)
+        listData.forEach(element => {
+            if (num < maxNum ){
+                createPopular(element);
+                console.log(num);
+            }
+        });
+        
+    } catch (error) {
+        console.log(error);
+    }
+    num =1;
+}
 
 btnOther.addEventListener("click", async () => {
     if(maxNum === 6) {
@@ -20,40 +54,12 @@ btnOther.addEventListener("click", async () => {
         console.log(maxNum)
     } else if (maxNum === 11) {
         maxNum = 6;
+        
         await getResults();
         btnOther.innerText = "Visualizza altro";
         console.log(maxNum)
     }
 })
-
-
-window.onload = getResults();
-
-async function getResults () {
-
-    try {
-        const res = await fetch(endPoint);
-        const json = await res.json();
-        const data = json.data;
-        getInfoTop(data[0].artist)
-
-        const song = await fetch(data[0].artist.tracklist)
-        const list = await song.json();
-        const listData = list.data;
-        listData.sort((a, b) => b.rank - a.rank);
-        
-        listData.forEach(element => {
-            if (num < maxNum ){
-                createPopular(element);
-            }
-        });
-        // console.log(listData)
-        
-    } catch (error) {
-        console.log(error);
-    }
-
-}
 
 function getInfoTop ({picture_xl, name}) {
     topSection.style.backgroundImage = `url(${picture_xl})`
@@ -74,7 +80,7 @@ function createPopular (song) {
     } else {
         timingSong = `${minutes}:${remainingSeconds}`;
     }
-
+    // console.log(maxNum)
     let tr = document.createElement('tr');
     let th = document.createElement('td')
     let tdImg = document.createElement('td');

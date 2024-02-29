@@ -14,66 +14,73 @@
 <body>
     <div class="row bg-dark text-light" >
         <!-- left bar -->
-        <div class="left-barside col-2 bg-black m-0 p-3 text-white fs-6">
+        <div class="left-barside col-2 bg-black m-0 p-3 text-white fs-7 d-none d-lg-block">
             <div class="btn-container">
-                <button class="my-2 d-block btn btn-link text-white text-decoration-none p-0">
+                <button class="my-2 d-flex align-items-center btn btn-link text-white text-decoration-none p-0">
                     <i class="fa-solid fa-ellipsis"></i>
                 </button>
-                <button class="my-2 d-block btn btn-link text-white text-decoration-none p-0">
+                <button class="my-2 d-flex align-items-center btn btn-link text-white text-decoration-none p-0">
                     <i class="fa-solid fa-house"></i>
                     <span class="ms-2">Home</span>
                 </button>
-                <button class="my-2 d-block btn btn-link text-white text-decoration-none p-0">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                    <span class="ms-2">Search</span>
-                </button>
-                <button class="mb-4 d-block btn btn-link text-white text-decoration-none p-0">
+                <div class="d-flex align-items-center my-2">
+                    <button id="search-btn"
+                        class="d-flex align-items-center btn btn-link text-white text-decoration-none p-0"
+                        type="button">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                    <input id="search-input"
+                        class="text-white border-0 form-control form-control-sm h-50 ms-2 bg-black p-0" type="text"
+                        placeholder="Search ...">
+                </div>
+                <button class="mb-4 d-flex align-items-center btn btn-link text-white text-decoration-none p-0">
                     <i class="fa-solid fa-pause ms-1"></i>
                     <span class="ms-2">La tua libreria</span>
                 </button>
-                <button class="my-2 d-block btn btn-link text-white text-decoration-none p-0">
+                <button class="my-2 d-flex align-items-center btn btn-link text-white text-decoration-none p-0">
                     <i class="fa-solid fa-square-plus"></i>
                     <span class="ms-2">Crea playlist</span>
                 </button>
-                <button class="my-2 d-block btn btn-link text-white text-decoration-none p-0">
+                <button class="my-2 d-flex align-items-center btn btn-link text-white text-decoration-none p-0">
                     <i class="fa-solid fa-heart"></i>
-                    <span class="ms-2">Brani che ti piacciono</span>
+                    <p class="ms-2">Brani che ti piacciono</p>
                 </button>
-                <button class="mb-2 d-block btn btn-link text-white text-decoration-none p-0">
+                <button class="mb-2 d-flex align-items-center btn btn-link text-white text-decoration-none p-0">
                     <i class="fa-solid fa-bookmark"></i>
                     <span class="ms-2">I tuoi episodi</span>
                 </button>
                 <hr class="my-4">
             </div>
+
             <div class="playlist-container">
                 <p>Le tue playlist:</p>
-                <button class="my-3 d-block btn btn-link text-white text-decoration-none p-0">
+                <button class="my-3 d-flex align-items-center btn btn-link text-white text-decoration-none p-0">
                     <img src="/assets/Playlist-photos/1.jpg" alt="">
-                    <p class="d-inline-block">Life as a Teenager</p>
+                    <p class="ms-2 fs-11">Life as a Teenager</p>
                 </button>
-                <button class="my-3 d-block btn btn-link text-white text-decoration-none p-0">
+                <button class="my-3 d-flex align-items-center btn btn-link text-white text-decoration-none p-0">
                     <img src="/assets/Playlist-photos/2.jpg" alt="">
-                    <p class="d-inline-block">Positive Energy</p>
+                    <p class="ms-2 fs-11">Positive Energy</p>
                 </button>
-                <button class="my-3 d-block btn btn-link text-white text-decoration-none p-0">
+                <button class="my-3 d-flex align-items-center btn btn-link text-white text-decoration-none p-0">
                     <img src="/assets/Playlist-photos/3.jpg" alt="">
-                    <p class="d-inline-block">Through the Tunnel</p>
+                    <p class="ms-2 fs-11">Through the Tunnel</p>
                 </button>
-                <button class="my-3 d-block btn btn-link text-white text-decoration-none p-0">
+                <button class="my-3 d-flex align-items-center btn btn-link text-white text-decoration-none p-0">
                     <img src="/assets/Playlist-photos/4.jpg" alt="">
-                    <p class="d-inline-block">Drifting Away</p>
+                    <p class="ms-2 fs-11">Drifting Away</p>
                 </button>
-                <button class="my-3 d-block btn btn-link text-white text-decoration-none p-0">
+                <button class="my-3 d-flex align-items-center btn btn-link text-white text-decoration-none p-0">
                     <img src="/assets/Playlist-photos/5.jpg" alt="">
-                    <p class="d-inline-block">Lights Off</p>
+                    <p class="ms-2 fs-11">Lights Off</p>
                 </button>
-                <button class="my-3 d-block btn btn-link text-white text-decoration-none p-0">
+                <button class="my-3 d-flex align-items-center btn btn-link text-white text-decoration-none p-0">
                     <img src="/assets/Playlist-photos/6.jpg" alt="">
-                    <p class="d-inline-block">First Choices</p>
+                    <p class="ms-2 fs-11">First Choices</p>
                 </button>
-                <button class="my-3 d-block btn btn-link text-white text-decoration-none p-0">
+                <button class="my-3 d-flex align-items-center btn btn-link text-white text-decoration-none p-0">
                     <img src="/assets/Playlist-photos/7.jpg" alt="">
-                    <p class="d-inline-block">Flow State</p>
+                    <p class="ms-2 fs-11">Flow State</p>
                 </button>
             </div>
         </div>
@@ -114,11 +121,9 @@
                           
                         </tbody>
                     </table>
-                    <div class="d-flex justify-content-end">
-                        <button  id="other">
+                        <button  id="other" class="btn btn-link text-light">
                             Visualizza altro
                         </button>
-                    </div>
                 </div>
                 <div class="col-md-4 col-12">
                     <h4>Brani che ti piacciono</h4>

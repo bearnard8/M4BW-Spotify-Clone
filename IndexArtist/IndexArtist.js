@@ -1,4 +1,4 @@
-const endPoint = "https://striveschool-api.herokuapp.com/api/deezer/search?q=imagine_dragons";
+const endPoint = "https://striveschool-api.herokuapp.com/api/deezer/artist/";
 // sezione top
 const topSection = document.getElementById("top-section");
 // nome artista
@@ -15,7 +15,8 @@ let maxNum = 6;
 const btnSearch = document.getElementById("search-btn");
 const inputSearch = document.getElementById("search-input");
 
-
+let objParam = new URLSearchParams(window.location.search);
+let artistId = objParam.get("artid");
 
 
 window.onload = getResults();
@@ -23,12 +24,12 @@ window.onload = getResults();
 async function getResults () {
     tablePopular.innerHTML = "";
     try {
-        const res = await fetch(endPoint);
+        const res = await fetch(endPoint + artistId);
         const json = await res.json();
-        const data = json.data;
-        getInfoTop(data[0].artist);
+        getInfoTop(json);
+        console.log(json)
 
-        const song = await fetch(data[0].artist.tracklist)
+        const song = await fetch(json.tracklist)
         const list = await song.json();
         const listData = list.data;
         listData.sort((a, b) => b.rank - a.rank);

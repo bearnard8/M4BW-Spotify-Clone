@@ -10,7 +10,7 @@ ul {
 
 #artist-title {
     bottom: 20%;
-    left: 3%;
+    left: 2%;
 }
 
 .fa-play {
@@ -25,6 +25,17 @@ ul {
 
 img {
     cursor: pointer;
+}
+#verificato {
+    position: absolute;
+    left: 2%;
+    bottom: 32%;
+}
+#ascoltatori{
+    position: absolute;
+    left: 3%;
+    bottom: 4%;
+    font-size: 14px;
 }
 /* left side */
 .left-barside img{

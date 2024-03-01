@@ -19,13 +19,13 @@
                 <button class="my-2 d-flex align-items-center btn btn-link text-white text-decoration-none p-0">
                     <i class="fa-solid fa-ellipsis"></i>
                 </button>
-                <a href="/index/index.html" class="my-2 d-flex align-items-center btn btn-link text-white text-decoration-none p-0">
+                <a href="/index/index.html" class="my-2 d-flex align-items-baseline btn btn-link text-white text-decoration-none p-0">
                     <i class="fa-solid fa-house"></i>
                     <span class="ms-2">Home</span>
                 </a>
-                <div class="d-flex align-items-center my-2">
+                <div class="d-flex align-items-baseline my-2">
                     <button id="search-btn"
-                        class="d-flex align-items-center btn btn-link text-white text-decoration-none p-0"
+                        class="d-flex align-items-baseline btn btn-link text-white text-decoration-none p-0"
                         type="button">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </button>
@@ -33,19 +33,19 @@
                         class="text-white border-0 form-control form-control-sm h-50 ms-2 bg-black p-0" type="text"
                         placeholder="Search ...">
                 </div>
-                <button class="mb-4 d-flex align-items-center btn btn-link text-white text-decoration-none p-0">
+                <button class="mb-4 d-flex align-items-baseline btn btn-link text-white text-decoration-none p-0">
                     <i class="fa-solid fa-pause ms-1"></i>
                     <span class="ms-2">La tua libreria</span>
                 </button>
-                <button class="my-2 d-flex align-items-center btn btn-link text-white text-decoration-none p-0">
+                <button class="my-2 d-flex align-items-baseline btn btn-link text-white text-decoration-none p-0">
                     <i class="fa-solid fa-square-plus"></i>
                     <span class="ms-2">Crea playlist</span>
                 </button>
-                <button class="my-2 d-flex align-items-center btn btn-link text-white text-decoration-none p-0">
+                <button class="my-2 d-flex align-items-baseline btn btn-link text-white text-decoration-none p-0">
                     <i class="fa-solid fa-heart"></i>
                     <p class="ms-2">Brani che ti piacciono</p>
                 </button>
-                <button class="mb-2 d-flex align-items-center btn btn-link text-white text-decoration-none p-0">
+                <button class="mb-2 d-flex align-items-baseline btn btn-link text-white text-decoration-none p-0">
                     <i class="fa-solid fa-bookmark"></i>
                     <span class="ms-2">I tuoi episodi</span>
                 </button>
@@ -96,15 +96,24 @@
                             <span>User name</span>
                         </button>
                         <ul class="dropdown-menu dropdown-menu-dark">
-                          <li><a class="dropdown-item" href="#">Action</a></li>
-                          <li><a class="dropdown-item" href="#">Another action</a></li>
-                          <li><a class="dropdown-item" href="#">Something else here</a></li>
+                          <li><a class="dropdown-item" href="#">Account</a></li>
+                          <li><a class="dropdown-item" href="#">Profilo</a></li>
+                          <li><a class="dropdown-item" href="#">Sessione privata</a></li>
+                          <li><a class="dropdown-item" href="#">Impostazioni</a></li>
+                          <li><hr class="dropdown-divider"></li>
+                          <li><a class="dropdown-item" href="/Index/index.html">Esci</a></li>
                         </ul>
                       </li>
                 </ul>
+                <div id="verificato">
+                    <i class="fa-solid fa-circle-check text-primary"></i>
+                    <span class="fw-bold">Artista verificato</span>
+                </div>
                 <h1 id="artist-title" class="text-light position-absolute">
 
                 </h1>
+                <p id="ascoltatori">3.433.158 ascoltatori mensili</p>
+
             </section>
             <!-- barra -->
             <section class="my-3 mx-4">
@@ -125,9 +134,9 @@
                             Visualizza altro
                         </button>
                 </div>
-                <div class="col-md-4 col-12">
+                <div id="favorite" class="col-md-4 col-12">
                     <h4>Brani che ti piacciono</h4>
-
+                    
                 </div>
             </section>
         </div>

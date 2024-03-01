@@ -15,6 +15,7 @@ let maxNum = 6;
 const btnSearch = document.getElementById("search-btn");
 const inputSearch = document.getElementById("search-input");
 
+
 let objParam = new URLSearchParams(window.location.search);
 let artistId = objParam.get("artid");
 
@@ -116,8 +117,3 @@ function createPopular (song) {
 }
 
 // close the right bar-side:
-document.getElementById("rightbar-close").addEventListener("click",()=> {
-    document.getElementById("right-barside").classList.add("d-none", "d-lg-none");
-    document.getElementById("page-section").classList.remove("col-lg-8");
-    document.getElementById("page-section").classList.add("col-lg-10");
-});

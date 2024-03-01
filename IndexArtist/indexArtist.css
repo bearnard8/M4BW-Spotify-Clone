@@ -16,6 +16,7 @@ ul {
 .fa-play {
     background-color: #1BD661;
     color: #030005;
+    cursor: pointer;
 }
 
 .fa-ellipsis {
@@ -59,4 +60,14 @@ color:#5b5b5b ;
 #right-barside > div:last-of-type > div > p{
     color: #5b5b5b;
     font-size: 10px;
+}
+
+#rightbar-close {
+    
+    right: 1%;
+    top: 22px;
+}
+#rightbar-open {
+    right: 1%;
+    top: 22px;
 }

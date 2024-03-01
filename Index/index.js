@@ -2,7 +2,7 @@
 const endPoint = "https://striveschool-api.herokuapp.com/api/deezer/search?q=";
 
 // Variabile artista degli album di benvenuto
-const welcomeArtist = "a";
+const welcomeArtist = "Coldplay";
 
 // Container card album suggeriti
 const cardContainer = document.getElementById("suggestions-container");
@@ -69,7 +69,7 @@ function getRandomAlbums (albumsNumber) {
     })
 }
 
-function createAlbumCard({title, cover_xl}) {
+function createAlbumCard({title, cover_xl, id}) {
 
 /*
     <div class="col-md-2">
@@ -83,21 +83,22 @@ function createAlbumCard({title, cover_xl}) {
     </div>
 */
 
-    let cardBox = document.createElement("div");
-    cardBox.classList.add("col-md-2");
+    let cardAnchor = document.createElement("a");
+        cardAnchor.classList.add("col-md-2", "link-underline", "link-underline-opacity-0");
+        cardAnchor.href = `/album/album.html?albid=${id}`;
     let cardBody = document.createElement("div");
-    cardBody.classList.add("card", "text-bg-dark");
+        cardBody.classList.add("card", "text-bg-dark");
     let albumCover = document.createElement("img");
-    albumCover.classList.add("card-img-top", "p-3");
-    albumCover.src = cover_xl;
+        albumCover.classList.add("card-img-top", "p-3");
+        albumCover.src = cover_xl;
     let cardText = document.createElement("div");
-    cardText.classList.add("card-body", "playlist-info");
+        cardText.classList.add("card-body", "playlist-info");
     let albumTitle = document.createElement("p");
-    albumTitle.classList.add("card-text", "playlist-desc");
-    albumTitle.innerText = title;
+        albumTitle.classList.add("card-text", "playlist-desc");
+        albumTitle.innerText = title;
 
-    cardContainer.appendChild(cardBox);
-        cardBox.appendChild(cardBody);
+    cardContainer.appendChild(cardAnchor);
+        cardAnchor.appendChild(cardBody);
             cardBody.appendChild(albumCover);
             cardBody.appendChild(cardText);
                 cardText.appendChild(albumTitle);
@@ -141,6 +142,8 @@ function getData (record) {
     }
 }
 
+let count = 1;
+
 function createSearchResults () {
 
     if (albums.length > 0) {
@@ -162,7 +165,7 @@ function createSearchResults () {
         albums.forEach(album => {
             let cardAnchor = document.createElement("a");
                 cardAnchor.href = `/album/album.html?albid=${album.id}`;
-                cardAnchor.classList.add("col-md-2");
+                cardAnchor.classList.add("col-md-2", "link-underline", "link-underline-opacity-0");
             let cardBody = document.createElement("div");
                 cardBody.classList.add("card", "text-bg-dark");
             let albumCover = document.createElement("img");
@@ -171,7 +174,7 @@ function createSearchResults () {
             let cardText = document.createElement("div");
                 cardText.classList.add("card-body", "playlist-info");
             let albumTitle = document.createElement("p");
-                albumTitle.classList.add("card-text", "playlist-desc");
+                albumTitle.classList.add("card-text", "playlist-desc", "text-light");
                 albumTitle.innerText = album.title;
 
             albumCardsRow.appendChild(cardAnchor);
@@ -200,7 +203,7 @@ function createSearchResults () {
 
         artists.forEach(artist => {
             let cardAnchor = document.createElement("a");
-                cardAnchor.classList.add("col-md-2");
+                cardAnchor.classList.add("col-md-2", "link-underline", "link-underline-opacity-0");
                 cardAnchor.href = `/IndexArtist/indexArtist.html?artid=${artist.id}`;
             let cardBody = document.createElement("div");
                 cardBody.classList.add("card", "text-bg-dark", "h-100");
@@ -210,7 +213,7 @@ function createSearchResults () {
             let cardText = document.createElement("div");
                 cardText.classList.add("card-body", "playlist-info");
             let artistName = document.createElement("p");
-                artistName.classList.add("card-text", "playlist-desc");
+                artistName.classList.add("card-text", "playlist-desc", "text-light");
                 artistName.innerText = artist.name;
 
             artistCardsRow.appendChild(cardAnchor);
@@ -219,5 +222,90 @@ function createSearchResults () {
                     cardBody.appendChild(cardText);
                         cardText.appendChild(artistName);
         });
+    }
+
+    if (songs.length > 0 ) {
+
+        let songsSectionContainer = document.createElement("div");
+        songsSectionContainer.classList.add("container")
+        let songsSectionTitle = document.createElement("h3");
+            songsSectionTitle.classList.add("text-light");
+            songsSectionTitle.innerText = "Songs";
+        let songsCardsContainer = document.createElement("div");
+            songsCardsContainer.classList.add("container-fluid", "p-0");
+        let songsCardsRow = document.createElement("div");
+            songsCardsRow.classList.add("row", "g-1", "d-flex", "p-0", "justify-content-start");
+
+        midBox.appendChild(songsSectionContainer);
+            songsSectionContainer.appendChild(songsSectionTitle);
+            songsSectionContainer.appendChild(songsCardsContainer);
+                songsCardsContainer.appendChild(songsCardsRow);
+
+        let songsTable = document.createElement("table");
+            songsTable.classList.add("table", "table-dark");
+            songsTable.setAttribute("id", "table-title");
+        let tableHead = document.createElement("thead");
+        let tableTitleRow = document.createElement("tr", "row");
+        let numColName = document.createElement("th");
+            numColName.classList.add("col-md-1", "text-white", "text-end", "fw-lighter");
+            numColName.innerText = "#";
+        let titleColName = document.createElement("th");
+            titleColName.classList.add("col-md-6", "text-white", "fw-lighter");
+            titleColName.innerText = "TITOLO";
+        let playsColName = document.createElement("th");
+            playsColName.classList.add("col-md-4", "text-white", "text-center", "fw-lighter");
+            playsColName.innerText = "RIPRODUZIONI";
+        let timeColName = document.createElement("th");
+            timeColName.classList.add("col-md-1", "text-white");
+        let timeIcon = document.createElement("i");
+            timeIcon.classList.add("fa-regular", "fa-clock", "fw-lighter");
+
+        songsSectionContainer.appendChild(songsTable);
+            songsTable.appendChild(tableHead);
+                tableHead.appendChild(tableTitleRow);
+                    tableTitleRow.appendChild(numColName);
+                    tableTitleRow.appendChild(titleColName);
+                    tableTitleRow.appendChild(playsColName);
+                    tableTitleRow.appendChild(timeColName);
+                        timeColName.appendChild(timeIcon);
+
+        songs.forEach(song => {
+
+            let tableRow = document.createElement("tr");
+                tableRow.classList.add("text-white", "fw-lighter", "py-1");
+            let songNumb = document.createElement("th");
+                songNumb.classList.add("text-end", "px-0");
+                songNumb.innerText = count ++;
+            let songTitleArtista = document.createElement("td");
+                songTitleArtista.classList.add("px-1");
+            let songTitle = document.createElement("p");
+                songTitle.innerText = song.title;
+                songTitle.classList.add("fw-bold", "pb-0");
+            let songArtista = document.createElement("p");
+                songArtista.classList.add("pt-0");
+                songArtista.innerText = song.artist.name;
+            let playedSong = document.createElement("td");
+                playedSong.innerText = song.rank;
+                playedSong.classList.add("text-center", "px-3");
+            let songTime = document.createElement("td");
+                songTime.classList.add("px-0");
+            const minutes = Math.floor((song.duration % 3600) / 60);
+            const remainingSeconds = song.duration % 60;
+            let timingSong;
+            if (remainingSeconds < 10) {
+                timingSong = `${minutes}:0${remainingSeconds}`;
+            } else {
+                timingSong = `${minutes}:${remainingSeconds}`;
+            }
+            songTime.innerText = timingSong;
+            
+            songsTable.appendChild(tableRow);
+                tableRow.appendChild(songNumb);
+                tableRow.appendChild(songTitleArtista);
+                    songTitleArtista.appendChild(songTitle);
+                    songTitleArtista.appendChild(songArtista);
+                tableRow.appendChild(playedSong);
+                tableRow.appendChild(songTime);
+        })
     }
 }

@@ -220,5 +220,4 @@ function createSearchResults () {
                         cardText.appendChild(artistName);
         });
     }
-
 }

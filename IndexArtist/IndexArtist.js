@@ -5,6 +5,8 @@ const topSection = document.getElementById("top-section");
 const nameArtist = document.getElementById("artist-title");
 // tabella popular
 const tablePopular = document.getElementById("table-popular");
+// sezione brani che ti piacciono
+const favorite = document.getElementById("favorite");
 // btn other
 const btnOther = document.getElementById("other");
 // counter per numero canzoni
@@ -15,11 +17,12 @@ let maxNum = 6;
 const btnSearch = document.getElementById("search-btn");
 const inputSearch = document.getElementById("search-input");
 
+
 let objParam = new URLSearchParams(window.location.search);
 let artistId = objParam.get("artid");
 
 
-window.onload = getResults();
+window.onload = getResults(), favoriteSection();
 
 async function getResults () {
     tablePopular.innerHTML = "";
@@ -33,11 +36,11 @@ async function getResults () {
         const list = await song.json();
         const listData = list.data;
         listData.sort((a, b) => b.rank - a.rank);
-        console.log(listData)
+        // console.log(listData)
         listData.forEach(element => {
             if (num < maxNum ){
                 createPopular(element);
-                console.log(num);
+                // console.log(num);
             }
         });
         
@@ -115,9 +118,36 @@ function createPopular (song) {
     tablePopular.appendChild(tr);
 }
 
-// close the right bar-side:
-document.getElementById("rightbar-close").addEventListener("click",()=> {
-    document.getElementById("right-barside").classList.add("d-none", "d-lg-none");
-    document.getElementById("page-section").classList.remove("col-lg-8");
-    document.getElementById("page-section").classList.add("col-lg-10");
-});
+async function favoriteSection () {
+    try {
+        const res = await fetch(endPoint + artistId);
+        const json = await res.json();
+        createFavorite(json);
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+function createFavorite ({name, picture}) {
+    let container = document.createElement("div");
+    let img = document.createElement("img");
+    let body = document.createElement("div");
+    let h5 = document.createElement("h6");
+    let text = document.createElement("p");
+
+    img.src = picture;
+    h5.innerText = "Hai messo mi piace a 0 brani";
+    text.innerText = `Di ${name}`;
+
+    container.classList.add('d-flex', 'align-items-center', 'mt-4');
+    img.classList.add('rounded-pill', 'me-2');
+    img.style.height = "6em";
+    text.style.fontSize = "13px";
+    text.style.color = "gray";
+
+    body.appendChild(h5);
+    body.appendChild(text);
+    container.appendChild(img);
+    container.appendChild(body);
+    favorite.appendChild(container);
+}

@@ -10,12 +10,13 @@ ul {
 
 #artist-title {
     bottom: 20%;
-    left: 3%;
+    left: 2%;
 }
 
 .fa-play {
     background-color: #1BD661;
     color: #030005;
+    cursor: pointer;
 }
 
 .fa-ellipsis {
@@ -24,6 +25,17 @@ ul {
 
 img {
     cursor: pointer;
+}
+#verificato {
+    position: absolute;
+    left: 2%;
+    bottom: 32%;
+}
+#ascoltatori{
+    position: absolute;
+    left: 3%;
+    bottom: 4%;
+    font-size: 14px;
 }
 /* left side */
 .left-barside img{
@@ -59,4 +71,14 @@ color:#5b5b5b ;
 #right-barside > div:last-of-type > div > p{
     color: #5b5b5b;
     font-size: 10px;
+}
+
+#rightbar-close {
+    
+    right: 1%;
+    top: 22px;
+}
+#rightbar-open {
+    right: 1%;
+    top: 22px;
 }

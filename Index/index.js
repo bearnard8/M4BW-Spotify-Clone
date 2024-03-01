@@ -13,13 +13,6 @@ const inputField = document.getElementById("search-input");
 // Contenitore del contenuto centrale
 const midBox = document.getElementById("central-content");
 
-// close the right bar-side:
-document.getElementById("rightbar-close").addEventListener("click",()=> {
-    document.getElementById("right-barside").classList.add("d-none", "d-lg-none");
-    document.getElementById("page-section").classList.remove("col-lg-8");
-    document.getElementById("page-section").classList.add("col-lg-10");
-});
-
 let albums = [];
 let artists = [];
 let songs = [];
@@ -165,7 +158,7 @@ function createSearchResults () {
         albums.forEach(album => {
             let cardAnchor = document.createElement("a");
                 cardAnchor.href = `/album/album.html?albid=${album.id}`;
-                cardAnchor.classList.add("col-md-2", "link-underline", "link-underline-opacity-0");
+                cardAnchor.classList.add("col-md-2", "col-sm-4", "col-6", "link-underline", "link-underline-opacity-0");
             let cardBody = document.createElement("div");
                 cardBody.classList.add("card", "text-bg-dark");
             let albumCover = document.createElement("img");
@@ -203,7 +196,7 @@ function createSearchResults () {
 
         artists.forEach(artist => {
             let cardAnchor = document.createElement("a");
-                cardAnchor.classList.add("col-md-2", "link-underline", "link-underline-opacity-0");
+                cardAnchor.classList.add("col-md-2", "col-sm-4", "col-6", "link-underline", "link-underline-opacity-0");
                 cardAnchor.href = `/IndexArtist/indexArtist.html?artid=${artist.id}`;
             let cardBody = document.createElement("div");
                 cardBody.classList.add("card", "text-bg-dark", "h-100");
@@ -227,7 +220,7 @@ function createSearchResults () {
     if (songs.length > 0 ) {
 
         let songsSectionContainer = document.createElement("div");
-        songsSectionContainer.classList.add("container")
+        songsSectionContainer.classList.add("container", "pt-3")
         let songsSectionTitle = document.createElement("h3");
             songsSectionTitle.classList.add("text-light");
             songsSectionTitle.innerText = "Songs";

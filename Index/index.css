@@ -95,3 +95,13 @@ input[type="range"]::-webkit-slider-runnable-track {
 .fs-12{
     font-size: 12px;
 }
+
+#rightbar-close {
+    
+    right: 1%;
+    top: 22px;
+}
+#rightbar-open {
+    right: 1%;
+    top: 22px;
+}

@@ -98,7 +98,7 @@ function createPopular (song) {
     th.classList.add('col-1'),
     tdImg.classList.add('col-2');
     name.classList.add('col-5');
-    rank.classList.add('col-2');
+    rank.classList.add('col-md-2', 'd-md-block', 'd-none');
     duration.classList.add('col-1');
 
     // assegnazione valori

@@ -9,7 +9,7 @@
     <script src="https://kit.fontawesome.com/29d9bcc801.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="album.css">
     <link rel="stylesheet" href="/general.css">
-    <title>Document</title>
+    <title>Album Page</title>
 </head>
 
 <body>
@@ -88,7 +88,7 @@
         </div>
 
         <!-- page section -->
-        <div class="col-8 bg-black p-0" style="height: 100%;">
+        <div class="col-lg-8 col-12 bg-black p-0" style="height: 100%;">
             <div id="back-gradient">
                 <div class="row" id="top-section">
 
@@ -209,43 +209,43 @@
         </div>
 
         <!-- song-bar -->
-    <div id="song-bar">
-        <div class="text-white d-flex justify-content-between align-items-center h-100 px-3">
-            <div class="d-flex justify-content-start align-items-center">
-                <img src="/assets/Playlist-photos/1.jpg" alt="">
-                <div class="mx-3">
-                    <p>Fat Funny Friends</p>
-                    <p>Maddie Zahm</p>
+        <div id="song-bar" class="fixed-bottom">
+            <div class="text-white d-flex justify-content-between align-items-center px-3">
+                <div class="d-flex justify-content-start align-items-center">
+                    <img src="/assets/Playlist-photos/1.jpg" alt="">
+                    <div class="mx-3">
+                        <p>Fat Funny Friends</p>
+                        <p>Maddie Zahm</p>
+                    </div>
+                    <i class="fa-regular fa-heart"></i>
                 </div>
-                <i class="fa-regular fa-heart"></i>
-            </div>
-
-
-            <div class="d-flex flex-column justify-content-center align-items-center">
-                <div class="d-flex justify-content-center align-items-center">
-                    <i class="fa-solid fa-shuffle mx-3"></i>
-                    <i class="fa-solid fa-backward-step mx-3"></i>
-                    <i class="fa-solid fa-circle-play mx-3 fs-2"></i>
-                    <i class="fa-solid fa-forward-step mx-3"></i>
-                    <i class="fa-solid fa-arrow-rotate-right mx-3"></i>
+    
+    
+                <div class="d-flex flex-column justify-content-center align-items-center">
+                    <div class="d-flex justify-content-center align-items-center">
+                        <i class="fa-solid fa-shuffle mx-3"></i>
+                        <i class="fa-solid fa-backward-step mx-3"></i>
+                        <i class="fa-solid fa-circle-play mx-3 fs-2"></i>
+                        <i class="fa-solid fa-forward-step mx-3"></i>
+                        <i class="fa-solid fa-arrow-rotate-right mx-3"></i>
+                    </div>
+                    <div class="w-100">
+                        <input type="range" class="form-range w-100" id="customRange1">
+                    </div>
                 </div>
-                <div class="w-100">
-                    <input type="range" class="form-range w-100" id="customRange1">
+    
+    
+    
+                <div class="text-grey d-lg-flex justify-content-start align-items-center d-none">
+                    <i class="fa-solid fa-microphone mx-2"></i>
+                    <i class="fa-solid fa-bars mx-2"></i>
+                    <i class="fa-solid fa-desktop mx-2"></i>
+                    <i class="fa-solid fa-volume-low mx-2"></i>
+                    <input type="range" class="form-range mx-2" id="customRange1">
+                    <i class="fa-solid fa-up-right-and-down-left-from-center mx-2"></i>
                 </div>
-            </div>
-
-
-
-            <div class="text-grey d-flex justify-content-start align-items-center">
-                <i class="fa-solid fa-microphone mx-2"></i>
-                <i class="fa-solid fa-bars mx-2"></i>
-                <i class="fa-solid fa-desktop mx-2"></i>
-                <i class="fa-solid fa-volume-low mx-2"></i>
-                <input type="range" class="form-range mx-2" id="customRange1">
-                <i class="fa-solid fa-up-right-and-down-left-from-center mx-2"></i>
             </div>
         </div>
-    </div>
 
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
